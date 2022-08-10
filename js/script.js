@@ -2,13 +2,13 @@
 $(function(){
     'use strict';
     //adjust header height
-    var myheader = $('header')
-    myheader.height($(window).height());
+    var myHeader = $('header')
+    myHeader.height($(window).height());
     $(window).resize(function(){
-        myheader.height($(window).height());
+        myHeader.height($(window).height());
     });
     //links add active class
-    $('.links li a').click(function(){
+    $('.links a').click(function(){
         $(this).addClass('active').siblings().removeClass('active');    
     });
 
@@ -17,7 +17,22 @@ $(function(){
         $('html,body').animate({
             scrollTop: $('#'+ $(this).data('value') ).offset().top
             },1000)
-
-    })
-});
-
+    });
+    // zoza auto slider code
+    (function autoSlider() {
+       $('.zoza-active').each(function() {
+            if(!$(this).is(':last-child')) {
+                $(this).delay(3500).fadeOut(1500,function() {
+                     $(this).removeClass('zoza-active').next().addClass('zoza-active').fadeIn(1500);
+                     autoSlider();
+                });
+            } else {
+                $(this).delay(3500).fadeOut(1500,function() {
+                    $(this).removeClass('zoza-active');
+                    $('.zoza-slider div').eq(0).addClass('zoza-active').fadeIn(1500);
+                    autoSlider();
+                });
+            }
+        });
+    }());
+}());

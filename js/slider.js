@@ -1,26 +1,16 @@
-var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active-slider", "");
-    }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active-slider";
-}
+  $(function hSlider() {
+    $('.hslider div').each(function() {
+        if(!$(this).is(':last-child')) {
+            $(this).delay(3500).fadeOut(1500,function() {
+                  $(this).removeClass('hactive').next().addClass('hactive').fadeIn(1500);
+                  hSlider();
+            });
+        } else {
+            $(this).delay(3500).fadeOut(1500,function() {
+                $(this).removeClass('hactive');
+                $('.hslider div').eq(0).addClass('hactive').fadeIn(1500);
+                hSlider();
+            });
+        }
+    });
+  }());
