@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/slider.css">
+    <meta name="description" content="my site description">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temp 2</title>
+
+</head>
+<body>
+    <div class="navbar">
+        <nav class="container overflow">
+            <div class="logo fl-left">
+                <h2><a href="#"></a> Zoza</h2>
+            </div>
+            <div class="links fl-right">
+                <a  class="active" href="#">home</a>
+                <a data-value="about" href="#">about</a>
+                <a data-value="portfolio" href="#">portfolio</a>
+                <a data-value="testimonials" href="#">testimonials</a>
+                <a data-value="contact" href="#">contact</a>
+            </div>
+        </nav>
+    </div>
+    <header class="overlay">
+                <!-- Slideshow container -->
+        <div class="slideshow-container">
+
+            <!-- Full-width slides/quotes -->
+            <div class="mySlides">
+            <q>I love you the more </q>
+            <p class="author">- John Keats</p>
+            </div>
+        
+            <div class="mySlides">
+            <q>But man is not made for defeat..</q>
+            <p class="author">- Ernest Hemingway</p>
+            </div>
+        
+            <div class="mySlides">
+            <q>I have not failed. I've just found 10,000 ways.</q>
+            <p class="author">- Thomas A. Edison</p>
+            </div>
+        
+            <!-- Next/prev buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        
+        <!-- Dots/bullets/indicators -->
+        <div class="dot-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </header>
+    <div class="container" id="about">
+        <h2>about me</h2>
+    </div>
+    <div class="container" id="portfolio">
+        <h2>portfolio</h2>
+    </div>
+    <div class="container" id="testimonials">
+        <h2>testimonials</h2>
+    </div>
+    <div class="container" id="contact">
+        <h2>contact</h2>
+    </div>
+
+
+    <!-- scripts -->
+    <script src="js/slider.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
+
